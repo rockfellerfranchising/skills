@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rockfeller Product Instrumentation"
+  short_description: "Plan privacy-safe PostHog events, funnels and feature flags."
+  default_prompt: "Instrument this Rockfeller product flow in PostHog."

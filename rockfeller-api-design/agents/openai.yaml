@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rockfeller API Design"
+  short_description: "Design versioned, compatible Rockfeller REST APIs."
+  default_prompt: "Design a Rockfeller API endpoint and its contract."

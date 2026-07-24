@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rockfeller Integration Delivery"
+  short_description: "Design resilient, observable Rockfeller provider integrations."
+  default_prompt: "Design a Rockfeller CRM or webhook integration."

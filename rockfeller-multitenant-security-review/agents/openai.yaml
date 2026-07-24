@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rockfeller Tenant Security Review"
+  short_description: "Review Rockfeller tenant access boundaries."
+  default_prompt: "Review this Rockfeller endpoint for authorization and tenant-isolation risks."

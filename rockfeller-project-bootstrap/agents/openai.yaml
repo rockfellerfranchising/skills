@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rockfeller Project Bootstrap"
+  short_description: "Start projects through the Rock CLI scaffold."
+  default_prompt: "Start a new Rockfeller API project using the approved scaffold."
