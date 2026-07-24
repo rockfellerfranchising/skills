@@ -3,10 +3,13 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "validate:skills": "bun scripts/validate-skills.ts",
+    "check": "bun run typecheck && bun run validate:skills"
   },
-  "peerDependencies": {
-    "typescript": "^5"
+  "devDependencies": {
+    "@types/bun": "1.3.14",
+    "typescript": "5.9.3"
   }
 }

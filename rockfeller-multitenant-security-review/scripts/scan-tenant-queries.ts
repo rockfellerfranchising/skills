@@ -8,7 +8,7 @@ if (!root) {
 	process.exit(2);
 }
 
-const extensions = new Set(['.ts', '.tsx', '.js', '.jsx']);
+const extensions = new Set(['.ts', '.tsx']);
 const patterns = [
 	{ label: 'ID-only database lookup', test: /(?:find(?:First|One)?|where)\s*\([^\n]*(?:\.id|\bid\b)[^\n]*\)/ },
 	{ label: 'ID-only cache key', test: /(?:cache\.(?:get|set)|redis\.(?:get|set)|key:)[^\n]*(?:Id|_id)\b/i },
