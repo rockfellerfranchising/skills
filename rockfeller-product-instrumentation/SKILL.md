@@ -5,7 +5,7 @@ description: Turn Rockfeller product issues, PRs, screens, and flows into privac
 
 # Rockfeller Product Instrumentation
 
-Use PostHog to answer a product decision, not to create an inventory of clicks. The inspected projects do not yet contain a PostHog SDK or live catalog, so every proposal must say whether it is a new implementation or a change to an existing one.
+Use PostHog to answer a product decision, not to create an inventory of clicks. The inspected projects do not yet contain a PostHog SDK or live catalog, so every proposal must say whether it is a new implementation or a change to an existing one. PostHog product analytics does not replace operational telemetry: NestJS logs, request ID, traces, metrics and errors must use `@rockdev/telemetry`, never a manual implementation.
 
 ## Procedure
 
@@ -38,3 +38,4 @@ Use `references/measurement-plans.md` as templates. Read `deprecated-events.md` 
 - [Implementation patterns](references/implementation-patterns.md) and [measurement plans](references/measurement-plans.md)
 - [Identity model](references/identity-model.md), [group model](references/group-model.md), and [PII policy](references/pii-policy.md)
 - [Dashboard conventions](references/dashboard-conventions.md) and [deprecated events](references/deprecated-events.md)
+- [Telemetry integration](https://github.com/rockfellerfranchising/telemetry/blob/main/README.md)

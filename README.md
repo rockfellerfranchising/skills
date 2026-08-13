@@ -13,6 +13,7 @@ O objetivo é que uma tarefa recorrente — revisar acesso, integrar um forneced
 | `rockfeller-product-instrumentation` | Features, telas e fluxos que precisam ser medidos | Plano PostHog com eventos, propriedades, funil, PII review e rollout |
 | `rockfeller-project-bootstrap` | Criação de LP, dashboard, API, serviço ou monólito novo | Projeto iniciado pela CLI oficial `rock new` |
 | `rockfeller-api-design` | Criação ou alteração de contratos HTTP | API REST versionada, paginada, autorizada e compatível |
+| `rockfeller-telemetry` | Serviços NestJS que precisam de logs, request ID, traces, métricas, erros ou contexto de job | Integração padronizada com `@rockdev/telemetry` |
 
 Cada skill contém um `SKILL.md` curto e referências carregadas apenas quando necessárias. Não duplique as referências em outro lugar: elas são a fonte de verdade operacional da skill.
 
@@ -58,6 +59,7 @@ As skills devem ser aplicadas ao contexto real do projeto. Em especial:
 - a instrumentação estabelece PostHog como padrão para trabalho novo, mas não presume que ele já esteja instalado;
 - o envelope de integração canônico vale para integrações novas; contratos legados devem ser adaptados gradualmente;
 - a skill de API padroniza `/v1`, exclusivamente UUID v7, envelope JSON `ok/data` e cursor para coleções não limitadas.
+- serviços NestJS usam `@rockdev/telemetry` para logs, contexto, request ID, traces, métricas, erros e shutdown; não implemente essas camadas manualmente.
 
 ## Desenvolvimento local
 
@@ -83,7 +85,7 @@ As recomendações de skills para novos projetos são mantidas no repositório `
 
 - `web`: bootstrap, integrações e instrumentação;
 - `api`: bootstrap, integrações, segurança e API design;
-- `monolith`: todas as cinco skills.
+- `monolith`: todas as seis skills; `api`: também inclui telemetry.
 
 Mudanças aqui que alterem nomes ou a estrutura de uma skill devem atualizar a referência correspondente na CLI no mesmo ciclo.
 

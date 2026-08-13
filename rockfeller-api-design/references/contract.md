@@ -40,4 +40,4 @@ Mudanças em `/v1` são aditivas. Use `/v2` para path, campo obrigatório, semâ
 
 ## Documentação e segurança
 
-Publique OpenAPI e referência interativa, documente auth/status, mantenha segredos server-side, aplique limite de body/rate limit em público, logs seguros, request ID e auditoria de ação privilegiada.
+Publique OpenAPI e referência interativa, documente auth/status, mantenha segredos server-side e aplique limite de body/rate limit em público. Em NestJS, use `@rockdev/telemetry` para logs seguros, request ID, traces, métricas, erros e auditoria correlacionável; não implemente essas camadas manualmente. Preserve o contrato publicado de erro ao adotar o filtro do pacote.

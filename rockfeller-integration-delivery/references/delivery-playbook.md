@@ -5,7 +5,7 @@
 1. Persistir primeiro estado Rockfeller e evento/outbox na mesma unidade transacional quando efeito for crítico.
 2. Enfileirar `{ eventId }`, não payload PII completo.
 3. Worker carrega evento, monta `RockfellerIntegrationEvent<T>`, faz mapping e envia com timeout/chave de idempotência.
-4. Sucesso salva provider request ID; falha transitória retrya; permanente vira DLQ segura.
+4. Sucesso salva provider request ID; falha transitória retrya; permanente vira DLQ segura. Instrumentar a chamada do adapter com `Telemetry.trackDependency()`; não criar logs, spans ou métricas de provider manualmente.
 5. Replay mantém a mesma chave e é auditado.
 
 ## Webhook de entrada
@@ -14,7 +14,7 @@
 2. Rejeitar segredo ausente, assinatura inválida, timestamp vencido, content type/tamanho/schema inválido.
 3. Deduplicar por ID do provider; sem ID, hash documentado de campos estáveis — nunca timestamp local.
 4. Persistir recebimento/dedup antes de processar e responder após aceitação durável.
-5. Worker traduz para contrato canônico, revalida referências internas e registra resultado seguro.
+5. Worker traduz para contrato canônico, revalida referências internas e registra resultado seguro com `Telemetry.runJob()`/`Telemetry`; não criar contexto async ou logger de worker manualmente.
 
 ## Matriz de falhas
 
