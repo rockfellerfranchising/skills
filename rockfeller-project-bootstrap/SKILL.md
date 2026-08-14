@@ -13,7 +13,7 @@ Use before creating any Rockfeller repository, LP, dashboard, API, service or mo
 2. Use `project-decisions.md` to select `web`, `api`, or `monolith`. Define name, owner, deploy target, data, auth and integrations before scaffolding.
 3. From intended parent directory, run `rock new <template> <name>` (or documented CLI development command). Answer prompts deliberately: package manager, dependencies, ORM, extras, Better Auth, bases and skills.
 4. Keep and complete generated README, `AGENTS.md`, symlinked `CLAUDE.md`/`CONTRIBUTING.md`, CI/configuration, env example and quality scripts. Every project has detailed Portuguese README and project-specific English AGENTS.
-5. Run generated checks and `rock status`/`rock env check` when applicable. Install selected skills, then start domain implementation.
+5. Run generated checks and `rock status`/`rock env check` when applicable. For every generated NestJS service, install and integrate `@rockdev/telemetry` before domain work; never scaffold manual logs, request ID, OpenTelemetry, redaction, exception filters or telemetry shutdown. Install selected skills, then start domain implementation.
 
 ## Template choice
 
@@ -30,3 +30,4 @@ If the CLI cannot be found or executed, report the blocker and request restorati
 - [CLI workflow](references/cli-workflow.md)
 - [Project decisions and template/skill matrix](references/project-decisions.md)
 - [Code-review-graph setup and agent rule](references/code-review-graph.md)
+- [Telemetry integration](https://github.com/rockfellerfranchising/telemetry/blob/main/README.md)

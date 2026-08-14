@@ -4,11 +4,14 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "check": "bun run lint && bun run typecheck && bun run test && bun run validate:skills",
+    "lint": "biome check .",
+    "test": "bun test ./scripts",
     "typecheck": "tsc --noEmit",
-    "validate:skills": "bun scripts/validate-skills.ts",
-    "check": "bun run typecheck && bun run validate:skills"
+    "validate:skills": "bun scripts/validate-skills.ts"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.5.2",
     "@types/bun": "1.3.14",
     "typescript": "5.9.3"
   }

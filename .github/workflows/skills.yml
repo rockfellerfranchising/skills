@@ -9,7 +9,7 @@ on:
       - 'bun.lock'
       - '.github/workflows/skills.yml'
   push:
-    branches: [main]
+    branches: [main, staging]
     paths:
       - 'rockfeller-*/**'
       - 'scripts/validate-skills.ts'

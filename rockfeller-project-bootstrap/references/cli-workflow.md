@@ -25,6 +25,7 @@ O repositório de desenvolvimento é `../cli`; o binário é `rock`. Use `rock n
 2. Instalar dependências se necessário; rodar checks e `rock status`.
 3. Usar `rock env example`/`rock env check`; nunca copiar `.env` de outro projeto.
 4. Fazer primeira alteração como feature de domínio, preservando módulos/contratos/documentação.
+5. Em cada serviço NestJS, integrar `@rockdev/telemetry` antes de adicionar observabilidade própria; usar somente suas APIs públicas para logs, request ID, contexto, tracing, métricas, erros e shutdown.
 
 ## Arquivos obrigatórios
 

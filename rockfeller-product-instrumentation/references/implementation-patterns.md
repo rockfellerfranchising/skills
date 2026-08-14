@@ -14,7 +14,7 @@ Não capture em componente que renderiza repetidamente sem guard de lifecycle. P
 
 ## Identidade e flags
 
-Antes de login, use ID anônimo do SDK. Após login, identifique com `users.id`; nunca email, telefone ou CPF como `distinct_id`. Teste merge/alias da jornada pré-login.
+Antes de login, use ID anônimo do SDK. Após login, identifique com `users.id`; nunca email, telefone ou CPF como `distinct_id`. Teste merge/alias da jornada pré-login. Para logs, request ID, traces, métricas e erros de um serviço NestJS, use `@rockdev/telemetry`; não duplique esses sinais no SDK de analytics.
 
 Nomeie flags por capacidade/estado, como `checkout_new_flow`. Default seguro é `false` para mudança comportamental. Defina segmento, owner, data de remoção e rollback. Capture exposição somente quando a variante é recebida.
 

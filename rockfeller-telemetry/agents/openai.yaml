@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rockfeller Telemetry"
+  short_description: "Padronize logs, métricas, traces e contexto em serviços NestJS."
+  default_prompt: "Integre @rockdev/telemetry a este serviço Rockfeller."

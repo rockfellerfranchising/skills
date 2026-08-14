@@ -24,7 +24,7 @@ Read `references/existing-provider-contracts.md` before modifying a known integr
 2. Define canonical `type`, schema `version`, `source`, scope, `correlationId`, and deterministic `idempotencyKey`. New boundaries use `canonical-events.md`.
 3. Write provider mapping and PII decision. Keep mapping/auth inside infra adapter.
 4. For outbound calls, set timeout, retry classification, durable queue/outbox, bounded exponential backoff with jitter, and DLQ/replay. For inbound calls, verify raw-body signature/key, freshness, schema, and duplicates.
-5. Add contract tests and operational artifacts before declaring integration done.
+5. Add contract tests and operational artifacts before declaring integration done. Use injected `Telemetry.trackDependency()` for provider calls and `Telemetry.runJob()` for workers; never add a second logger, tracing setup, request-ID middleware or error reporter.
 
 ## Required delivery record
 
@@ -49,3 +49,4 @@ Include behavior for duplicate, timeout, 4xx, 5xx, malformed callback and replay
 - [Existing provider contracts](references/existing-provider-contracts.md)
 - [Delivery playbook](references/delivery-playbook.md) and [retry policy](references/retry-policy.md)
 - [Webhook security](references/webhook-security.md), [PII sharing](references/pii-sharing-policy.md), and [error codes](references/integration-error-codes.md)
+- [Telemetry integration](https://github.com/rockfellerfranchising/telemetry/blob/main/README.md)

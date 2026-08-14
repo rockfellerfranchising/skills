@@ -22,7 +22,7 @@ Evita criar `web` que depois recebe backend improvisado ou monólito para págin
 | --- | --- |
 | web | project-bootstrap, integration-delivery, product-instrumentation |
 | api | project-bootstrap, integration-delivery, multitenant-security-review, api-design |
-| monolith | todas as cinco |
+| monolith | todas as seis |
 
 Exemplo: LP com formulário de lead usa integration e instrumentation; API administrativa usa api-design/security-review mesmo sem tenancy implementada.
 

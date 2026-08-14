@@ -27,7 +27,7 @@ In Members, `@Roles`/`@RequirePermission` establish coarse access; `@RequireAcce
 
 ### 3. Inspect data escape hatches
 
-Check direct `findById`, joins, list filters, cache keys, object-storage paths, generated download links, webhook callbacks, event payloads, exception messages, logs, and retries. Run:
+Check direct `findById`, joins, list filters, cache keys, object-storage paths, generated download links, webhook callbacks, event payloads, exception messages, logs, and retries. In NestJS, require `@rockdev/telemetry` for request context, redaction, logs and errors; flag parallel manual implementations as a design gap. Run:
 
 ```bash
 bun scripts/scan-tenant-queries.ts <directory>
@@ -73,5 +73,6 @@ Add `confidence` (`confirmed` or `design gap`) and cite the exact missing layer.
 - `references/role-permission-matrix.md`: Members RBAC baseline.
 - `references/sensitive-data-policy.md`, `public-routes.md`, and `audit-events.md`: handling rules.
 - `references/known-security-failures.md`: patterns to look for; not confirmed vulnerabilities.
+- [Telemetry integration](https://github.com/rockfellerfranchising/telemetry/blob/main/README.md)
 
 Read [current boundaries](references/current-boundaries.md) and [concrete review patterns](references/concrete-review-patterns.md) for the Members/Leveling baseline.
